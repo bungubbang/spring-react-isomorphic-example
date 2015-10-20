@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title><%= title %></title>
+    </head>
+    <body>
+        <h1><%= title %></h1>
+        <h2><%= subject %></h2>
+        <div id="sites"></div>
+        <p>
+            <a href="https://github.com/bungubbang/spring-react-isomorphic-example">https://github.com/bungubbang/spring-react-isomorphic-example</a>
+        </p>
+
+        <script type="application/javascript">
+            var sites = [];
+        <% for(var i=0; i<sites.length; i++) {%>
+            site = {
+                name: '<%= sites[i].name %>',
+                url: '<%= sites[i].url %>'
+            }
+            sites.push(site);
+        <% } %>
+        </script>
+        <script src="/webjars/react/0.13.3/react.js"></script>
+        <script src="/output/site.js"></script>
+        <script src="/output/site-list.js"></script>
+        <script src="/output/client.js"></script>
+    </body>
+</html>
