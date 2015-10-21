@@ -31,6 +31,7 @@ public class Application {
                 "/static/lib/ejs.min.js",
                 "/META-INF/resources/webjars/react/0.13.3/react.js",
                 "/static/js/render.js",
+                "/static/output/site-list.js",
                 "/static/output/site.js");
         configurer.setRenderFunction("render");
         configurer.setSharedEngine(false);

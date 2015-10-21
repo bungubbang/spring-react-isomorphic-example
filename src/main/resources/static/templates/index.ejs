@@ -6,20 +6,18 @@
     <body>
         <h1><%= title %></h1>
         <h2><%= subject %></h2>
-        <div id="sites"></div>
+        <div id="sites">
+            <%= React.renderToString(React.createElement(SiteList, { sites: sites} )) %>
+        </div>
         <p>
             <a href="https://github.com/bungubbang/spring-react-isomorphic-example">https://github.com/bungubbang/spring-react-isomorphic-example</a>
         </p>
 
         <script type="application/javascript">
             var sites = [];
-        <% for(var i=0; i<sites.length; i++) {%>
-            site = {
-                name: '<%= sites[i].name %>',
-                url: '<%= sites[i].url %>'
-            }
-            sites.push(site);
-        <% } %>
+            <% for(var i=0; i<sites.length; i++) {%>
+                sites.push(<%= sites[i].toJsonString %>);
+            <% } %>
         </script>
         <script src="/webjars/react/0.13.3/react.js"></script>
         <script src="/output/site.js"></script>

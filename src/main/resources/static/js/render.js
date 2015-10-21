@@ -12,8 +12,3 @@ function render(template, model) {
   }
   return new EJS({text: template}).render(data);
 }
-
-function renderJsx(template, model) {
-  var jsTemplate = JSXTransformer.transform(template).code;
-  return render(jsTemplate, model);
-}

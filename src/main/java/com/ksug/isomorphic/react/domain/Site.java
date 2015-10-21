@@ -21,4 +21,11 @@ public class Site {
     public String getUrl() {
         return url;
     }
+
+    public String getToJsonString() {
+        return "{" +
+                "name:'" + name + '\'' +
+                ", url:'" + url + '\'' +
+                '}';
+    }
 }
